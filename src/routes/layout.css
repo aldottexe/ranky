@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+body {
+   background-color: var(--color-mauve-200);
+   color: var(--color-mauve-100);
+   font-family: "Comic Sans MS";
+}
