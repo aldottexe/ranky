@@ -1,7 +1,36 @@
 @import 'tailwindcss';
+:root {
+   --g0: #EDEDED;
+   --g1: #E5E5E5;
+   --g2: #DCDCDC;
+   --g3: #51565C;
+   --g4: #272B2E;
+   --a1: #3B75D9;
+   --a2: #57AF63;
+   --a3: #CE6B87;
+   --a4: #E67E59;
+   --a5: #C7C734;
+   --a6: #9371D7;
+   --a7: #5CAAB3;
+}
 
+@theme {
+   --color-g0: var(--g0);
+   --color-g1: var(--g1);
+   --color-g2: var(--g2);
+   --color-g3: var(--g3);
+   --color-g4: var(--g4);
+   --color-a1: var(--a1);
+   --color-a2: var(--a2);
+   --color-a3: var(--a3);
+   --color-a4: var(--a4);
+   --color-a5: var(--a5);
+   --color-a6: var(--a6);
+   --color-a7: var(--a7);
+}
 body {
-   background-color: var(--color-mauve-200);
-   color: var(--color-mauve-100);
-   font-family: "Comic Sans MS";
+   background-color: var(--color-g0);
+   color: var(--color-g4);
+   font-family: monospace;
+   font-size: 16px;
 }

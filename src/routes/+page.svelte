@@ -1,19 +1,17 @@
 <script lang="ts">
-	import type { orderableList_T } from '$lib/orderableList.svelte';
-	import OrderableList from '$lib/orderableList.svelte';
-	import RankedItem from '$lib/rankedItem.svelte';
+	import ButtonLG from "$lib/ui/buttonLG.svelte";
 
-	const items: orderableList_T = [
-		{ name: 'pep', id: 0 },
-		{ name: 'hawaiian', id: 1 },
-		{ name: 'buff', id: 2 }
-	];
 </script>
+<div class="flex items-center justify-end h-screen flex-col max-w-100 mx-auto gap-10 pb-10">
+	<div>
+	<img src="/logo.svg" alt="logo" class="w-30 mb-3" />
+	<p>
+		Welcome to Polka, your simple group decision maker. Create or join a room below to start.
+	</p>
+	</div>
 
-<OrderableList {items} />
-
-<!-- <ul class=""> -->
-<!-- 	{#each items as item, i} -->
-<!-- 		<RankedItem name={item} {i} moveUp={() => {}} moveDown={() => {}} /> -->
-<!-- 	{/each} -->
-<!-- </ul> -->
+	<div class="flex w-full gap-2">
+		<ButtonLG label="join" onClick={() => {}} />
+		<ButtonLG label="create" onClick={() => {}} />
+	</div>
+</div>
