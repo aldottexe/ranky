@@ -24,6 +24,6 @@
     <p class="text-red-800">logged out</p>
   {/if}
 </div>
-<div class="flex items-center justify-end h-screen flex-col max-w-100 mx-auto gap-10 pb-20 px-20">
+<div class="flex items-center justify-end h-screen flex-col max-w-150 mx-auto gap-10 pb-20 px-20">
 {@render children()}
 </div>

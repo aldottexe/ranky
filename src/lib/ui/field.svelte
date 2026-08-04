@@ -23,10 +23,17 @@
         $effect(() => {
             if(overflowing)
                 setTimeout(() => {
-                    node.style.whiteSpace = "nowrap"
+                    node.style.whiteSpace = "wrap"
                 }, 300)
         })
+        $effect(() => {
+        if (node.scrollWidth > node.clientWidth)
+            overflowing = true
+        if (value.length < 10)
+            overflowing = false
+        });
     };
+
 </script>
 
 
@@ -59,11 +66,6 @@
     bind:textContent={value}
     bind:clientHeight={inputHeight}
     use:delayNoWrap
-    onkeypress={(e) => {
-        if (e.target.scrollWidth > e.target.clientWidth) {
-            overflowing = true
-        }
-    }}
     style={inputPosition}></div>
 
     <!-- fill for overflowing -->
