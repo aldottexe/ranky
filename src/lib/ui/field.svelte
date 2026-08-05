@@ -32,6 +32,9 @@
         if (value.length < 10)
             overflowing = false
         });
+        $effect(()=>
+            node.style.setProperty('--placeholder', `"${placeholder}"`)
+        );
     };
 
 </script>
@@ -58,15 +61,18 @@
     id={id} 
     class="block z-3 bg-g1 px-6 {overflowing? 'py-3' : 'py-1'} 
     rounded-lg absolute transition-all duration-300 ease-in-out 
-    focus:outline-none overflow-hidden 'whitespace-nowrap' right-0 bottom-0 whitespace-nowrap" 
+    focus:outline-none overflow-hidden right-0 bottom-0 whitespace-nowrap
+    before:absolute before:h-full before:content-(--placeholder)
+    
+    {value.length > 0 ? "before:opacity-0" : "before:opacity-50 before:transition-opacity"}"
     contenteditable=true
-    placeholder={placeholder}
     role="textbox"
     tabindex=0
     bind:textContent={value}
     bind:clientHeight={inputHeight}
     use:delayNoWrap
-    style={inputPosition}></div>
+    style={inputPosition}
+    ></div>
 
     <!-- fill for overflowing -->
     <div 

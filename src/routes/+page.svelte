@@ -25,7 +25,7 @@
 </script>
 
 <div>
-	<img src="/logo.svg" alt="logo" class="w-30 mb-3" />
+
 	<p>
 		Welcome to Polka, your simple group decision maker. Create or join a room below to start.
 	</p>
