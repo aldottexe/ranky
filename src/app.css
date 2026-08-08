@@ -1,10 +1,12 @@
 @import 'tailwindcss';
+
 :root {
    --g0: #EDEDED;
    --g1: #E5E5E5;
    --g2: #DCDCDC;
    --g3: #51565C;
    --g4: #272B2E;
+   --g450: #272b2e80;
    --a1: #3B75D9;
    --a2: #57AF63;
    --a3: #CE6B87;
@@ -20,6 +22,7 @@
    --color-g2: var(--g2);
    --color-g3: var(--g3);
    --color-g4: var(--g4);
+   --color-g450: var(--g450);
    --color-a1: var(--a1);
    --color-a2: var(--a2);
    --color-a3: var(--a3);
@@ -28,6 +31,7 @@
    --color-a6: var(--a6);
    --color-a7: var(--a7);
 }
+
 body {
    background-color: var(--color-g0);
    color: var(--color-g4);

@@ -7,6 +7,7 @@
     let {value = $bindable(""), title, id} : p = $props();
 
     function keyHandler(e: KeyboardEvent) {
+        console.log(e.key)
         if (e.key === "Backspace") {
             value = value.slice(0, -1);
             //if key is a number, add it to the value string, but only if the value string is less than 6 characters long
@@ -17,23 +18,24 @@
 
 </script>
 {#snippet codeHalf(code: string)}
-<span class="block px-4 py-1 min-w-16 rounded-lg bg-g1 text-center">{code}</span>
+<span class="block px-2 py-1 min-w-6 rounded-lg bg-g1 text-center {code === 'x' && 'text-g450'}">{code}</span>
 {/snippet}
 
 <div 
-class="flex gap-2 relative w-full items-center"
-onkeydown={keyHandler} 
-role="textbox"
-tabindex="0"
+   class="flex gap-2 relative w-full items-center flex-wrap"
+   onkeydown={keyHandler} 
+   role="textbox"
+   tabindex="0"
+   inputmode="numeric"
 >
     <label 
     for={id} 
     class="block bg-g2 px-4 py-1 min-w-20 rounded-lg font-bold uppercase text-center relative"
     
     >{title}</label>
-    <div class="flex" id={id}>
-        {@render codeHalf(value.slice(0, 3))} 
-        <span class="block min-w-5 py-1 text-center">-</span>
-        {@render codeHalf(value.slice(3, 6))}
+    <div class="flex gap-2" id={id} >
+      {#each new Array(6) as _, i}
+        {@render codeHalf(value[i] || 'x')} 
+      {/each}
     </div>
 </div>
